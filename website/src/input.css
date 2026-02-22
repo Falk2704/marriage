@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Thin divider rule */
+.divider-rule {
+  border: none;
+  border-top: 1px solid #4F6F5B;
+  opacity: 0.3;
+  width: 4rem;
+  margin: 2rem auto;
+}

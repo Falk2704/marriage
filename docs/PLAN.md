@@ -9,7 +9,7 @@ Wedding website for Isabell & Falk. 29 August 2026. Hotel Freihof Prichsenstadt.
 | Component       | Choice                                    |
 | --------------- | ----------------------------------------- |
 | Markup          | Plain HTML (single `index.html`)          |
-| Styling         | Tailwind CSS via CLI (built to `dist/`)   |
+| Styling         | Tailwind CSS v3 via CLI (built to `dist/`) |
 | Fonts           | Google Fonts: PT Serif, Petit Formal Script |
 | Build           | Tailwind CLI only                         |
 | Deploy          | GitHub Pages via GitHub Actions           |
