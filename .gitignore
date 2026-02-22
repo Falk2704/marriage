@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.ruff_cache/
+
+# IDE / Editor
+.ropeproject/
+.vscode/
+.idea/
+
+# Obsidian (track notes, ignore workspace/cache)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+
+# Node / Astro
+node_modules/
+dist/
+.astro/
+
+# OS
+.DS_Store
+Thumbs.db
