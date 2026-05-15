@@ -23,3 +23,8 @@ dist/
 # OS
 .DS_Store
 Thumbs.db
+
+# Local agent config
+opencode.json
+.claude/
+website/.claude/
