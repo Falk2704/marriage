@@ -102,7 +102,7 @@ See [DESIGN_TOKENS.md](./DESIGN_TOKENS.md) for exact values.
 - Hand-drawn appearance but highly controlled
 - Symmetrical composition
 - Minimal shading using short hatch-like marks
-- Flat, single-color: primary green (`#4F6F5B`)
+- Flat, single-color: primary green (`#4A6856`)
 - No fills, gradients, or textures
 - SVG format, inline
 

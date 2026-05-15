@@ -203,3 +203,12 @@ If uncertainty remains:
 	•	Stop.
 	•	State what is unknown.
 	•	Request clarification before proceeding.
+
+⸻
+
+10. Browser Tooling Constraints
+
+The model powering this agent (claude-opus-4.6) does not support vision. When analyzing the website in the browser:
+	•	NEVER use `MCP_DOCKER_browser_take_screenshot`. It produces an image the model cannot interpret.
+	•	Use `MCP_DOCKER_browser_snapshot` instead — it returns an accessible DOM/accessibility tree in YAML that the model can reason about.
+	•	Use `MCP_DOCKER_browser_console_messages` and `MCP_DOCKER_browser_network_requests` for debugging runtime errors.
