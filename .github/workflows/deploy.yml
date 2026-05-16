@@ -36,6 +36,9 @@ jobs:
           cp -r website/images _deploy/
           cp -r website/assets _deploy/
 
+      - name: Install lftp
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
       - name: Deploy via FTP
         env:
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
