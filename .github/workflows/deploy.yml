@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to OVHcloud FTP
 
 on:
   push:
@@ -7,15 +7,9 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -34,18 +28,22 @@ jobs:
         run: npm run build
         working-directory: website
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: website
+      - name: Stage deployable files
+        run: |
+          mkdir _deploy
+          cp website/index.html _deploy/
+          cp -r website/dist _deploy/
+          cp -r website/images _deploy/
+          cp -r website/assets _deploy/
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Deploy via FTP
+        env:
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_USERNAME: ${{ vars.FTP_USERNAME }}
+          FTP_HOST: ${{ vars.FTP_HOST }}
+        run: |
+          lftp -e "
+            set ftp:ssl-allow yes;
+            open -u \$FTP_USERNAME,\$FTP_PASSWORD \$FTP_HOST;
+            mirror --reverse --delete --verbose _deploy/ /www/;
+            bye"
