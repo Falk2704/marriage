@@ -32,6 +32,7 @@ jobs:
         run: |
           mkdir _deploy
           cp website/index.html _deploy/
+          cp website/robots.txt _deploy/
           cp -r website/dist _deploy/
           cp -r website/images _deploy/
           cp -r website/assets _deploy/
