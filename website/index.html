@@ -17,67 +17,76 @@
       href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400&family=Petit+Formal+Script&display=swap"
       rel="stylesheet"
     />
+    <link rel="preload" as="image" href="images/sketch.png" />
     <link rel="stylesheet" href="dist/output.css" />
   </head>
 
   <body class="bg-bg text-primary font-serif">
-
-    <!-- ============================================ -->
-    <!-- NAV -->
-    <!-- ============================================ -->
-    <header>
-    <nav class="sticky top-0 z-50 bg-bg border-b border-primary/30">
-      <div class="max-w-[52rem] mx-auto px-6 py-4 flex justify-center gap-6 sm:gap-8 flex-wrap">
-        <a href="#details" class="text-primary hover:text-accent text-[0.75rem] lg:text-[0.8125rem] uppercase tracking-[0.2em] leading-none flex items-center min-h-[48px] lg:min-h-0">Details</a>
-        <a href="#ablauf" class="text-primary hover:text-accent text-[0.75rem] lg:text-[0.8125rem] uppercase tracking-[0.2em] leading-none flex items-center min-h-[48px] lg:min-h-0">Ablauf</a>
-        <a href="#anreise" class="text-primary hover:text-accent text-[0.75rem] lg:text-[0.8125rem] uppercase tracking-[0.2em] leading-none flex items-center min-h-[48px] lg:min-h-0">Anreise</a>
-        <a href="#unterkunft" class="text-primary hover:text-accent text-[0.75rem] lg:text-[0.8125rem] uppercase tracking-[0.2em] leading-none flex items-center min-h-[48px] lg:min-h-0">Unterkunft</a>
-        <a href="#wuensche" class="text-primary hover:text-accent text-[0.75rem] lg:text-[0.8125rem] uppercase tracking-[0.2em] leading-none flex items-center min-h-[48px] lg:min-h-0">Wünsche</a>
-      </div>
-    </nav>
-    </header>
 
     <main>
 
       <!-- ============================================ -->
       <!-- HERO -->
       <!-- ============================================ -->
-      <section id="hero" class="bg-bg pt-10 pb-24 lg:pt-14 lg:pb-36 px-6 text-center">
-        <div class="max-w-[52rem] mx-auto space-y-6 lg:space-y-8">
+      <section id="hero" class="bg-bg min-h-screen relative">
+        <div class="min-h-screen flex flex-col items-center justify-start pt-12 lg:pt-24 px-6 text-center">
+          <div class="max-w-[52rem] mx-auto">
 
-          <!-- Intro line -->
-          <p class="text-[1rem] lg:text-[1.125rem] uppercase tracking-[0.25em] leading-[1.3]">
-            Wir heiraten
-          </p>
+            <!-- Intro line -->
+            <p class="text-[1rem] lg:text-[1.125rem] uppercase tracking-[0.25em] leading-[1.3]">
+              Wir heiraten
+            </p>
 
-          <!-- Hero illustration -->
-          <div class="flex justify-center !mt-10 mb-4 lg:!mt-12 lg:mb-6">
-            <img
-              src="images/sketch.png"
-              alt="Architekturzeichnung Hotel Freihof"
-              width="1240"
-              height="780"
-              decoding="async"
-              class="w-[260px] md:w-[340px] lg:w-[380px]"
-            />
+            <!-- Hero illustration -->
+            <div class="flex justify-center mt-10 lg:mt-16 mb-10 lg:mb-20">
+              <img
+                src="images/sketch.png"
+                alt="Skizze von Prichsenstadt"
+                width="1240"
+                height="780"
+                loading="eager"
+                decoding="sync"
+                class="w-[360px] md:w-[480px] lg:w-[560px]"
+              />
+            </div>
+
+            <!-- Names -->
+            <h1 class="font-script text-[2rem] lg:text-[3rem] leading-[1.2]">
+              Isabell &amp; Falk
+            </h1>
+
+            <!-- Date -->
+            <p class="text-[1rem] lg:text-[1.125rem] uppercase tracking-[0.25em] leading-[1.3] mt-6 lg:mt-10 mb-6 lg:mb-10">
+              29 · August · 2026
+            </p>
+
+            <!-- Venue -->
+            <p class="text-[0.875rem] lg:text-[1rem] uppercase tracking-[0.2em] leading-[1.3]">
+              Hotel Freihof Prichsenstadt
+            </p>
+
           </div>
-
-          <!-- Names -->
-          <h1 class="font-script text-[2rem] lg:text-[3rem] leading-[1.2]">
-            Isabell &amp; Falk
-          </h1>
-
-          <!-- Date -->
-          <p class="text-[1rem] lg:text-[1.125rem] uppercase tracking-[0.25em] leading-[1.3] mb-6 lg:mb-7">
-            29 · August · 2026
-          </p>
-
-          <!-- Venue -->
-          <p class="text-[0.875rem] lg:text-[1rem] uppercase tracking-[0.2em] leading-[1.3]">
-            Hotel Freihof Prichsenstadt
-          </p>
-
         </div>
+
+        <!-- Nav -->
+        <nav aria-label="Abschnitte" class="absolute bottom-28 lg:bottom-36 left-0 right-0 flex justify-center">
+          <div class="flex flex-wrap justify-center items-center gap-x-2 gap-y-1 px-6">
+            <a href="#details" class="text-primary hover:text-accent text-[0.75rem] lg:text-[0.8125rem] uppercase tracking-[0.2em] leading-none">Details</a>
+            <span class="text-primary/40 text-[0.75rem] select-none" aria-hidden="true">—</span>
+            <a href="#anreise" class="text-primary hover:text-accent text-[0.75rem] lg:text-[0.8125rem] uppercase tracking-[0.2em] leading-none">Anreise</a>
+            <span class="text-primary/40 text-[0.75rem] select-none" aria-hidden="true">—</span>
+            <a href="#unterkunft" class="text-primary hover:text-accent text-[0.75rem] lg:text-[0.8125rem] uppercase tracking-[0.2em] leading-none">Unterkunft</a>
+            <span class="text-primary/40 text-[0.75rem] select-none" aria-hidden="true">—</span>
+            <a href="#wuensche" class="text-primary hover:text-accent text-[0.75rem] lg:text-[0.8125rem] uppercase tracking-[0.2em] leading-none">Wünsche</a>
+          </div>
+        </nav>
+
+        <!-- Scroll arrow -->
+        <a href="#details" aria-label="Zur Feier scrollen" class="hero-scroll-arrow absolute bottom-16 lg:bottom-24 left-1/2 text-primary hover:text-accent transition-colors">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </a>
       </section>
 
       <!-- ============================================ -->
@@ -108,6 +117,9 @@
           <p class="text-[1rem] lg:text-[1.0625rem] leading-[1.7] mt-2">
             Uhrzeit folgt
           </p>
+          <p class="text-[1rem] lg:text-[1.0625rem] leading-[1.7] mt-2">
+            Wir bitten euch, bis 14:00 Uhr vor Ort zu sein.
+          </p>
 
           <p class="mt-6">
             <a
@@ -123,117 +135,9 @@
       </section>
 
       <!-- ============================================ -->
-      <!-- ABLAUF -->
-      <!-- ============================================ -->
-      <section id="ablauf" class="bg-bg py-16 lg:py-24 px-6 text-center">
-        <div class="max-w-[52rem] mx-auto">
-
-          <h2 class="text-[1.125rem] lg:text-[1.25rem] uppercase tracking-[0.2em] leading-[1.3] mb-12 lg:mb-16">
-            Ablauf
-          </h2>
-
-          <!-- Alternating timeline -->
-          <div class="relative max-w-[40rem] mx-auto">
-
-            <!-- Entry 1: Empfang → right side -->
-            <div class="timeline-entry relative mb-10 flex items-center w-full">
-              <div class="w-5/12"></div>
-              <div class="w-2/12 flex justify-center relative z-20">
-                <div class="w-3 h-3 rounded-full bg-primary opacity-40 shrink-0"></div>
-              </div>
-              <div class="w-5/12 text-left pl-2 lg:pl-4">
-                <img src="images/champagne.png" alt="" aria-hidden="true" width="580" height="543" loading="lazy" decoding="async" class="w-[44px] lg:w-[54px] mb-2" />
-                <p class="text-[0.875rem] lg:text-[0.9375rem] uppercase tracking-[0.2em] leading-[1.3] mb-1">
-                  14:00
-                </p>
-                <p class="text-[1rem] lg:text-[1.0625rem] leading-[1.7]">
-                  Empfang
-                </p>
-              </div>
-            </div>
-
-            <!-- Entry 2: Trauung → left side -->
-            <div class="timeline-entry timeline-cont relative mb-10 flex items-center w-full">
-              <div class="w-5/12 text-right pr-2 lg:pr-4">
-                <img src="images/rings.png" alt="" aria-hidden="true" width="339" height="240" loading="lazy" decoding="async" class="w-[44px] lg:w-[54px] mb-2 ml-auto" />
-                <p class="text-[0.875rem] lg:text-[0.9375rem] uppercase tracking-[0.2em] leading-[1.3] mb-1">
-                  15:00
-                </p>
-                <p class="text-[1rem] lg:text-[1.0625rem] leading-[1.7]">
-                  Trauung
-                </p>
-              </div>
-              <div class="w-2/12 flex justify-center relative z-20">
-                <div class="w-3 h-3 rounded-full bg-primary opacity-40 shrink-0"></div>
-              </div>
-              <div class="w-5/12"></div>
-            </div>
-
-            <!-- Entry 3: Kaffee & Kuchen → right side -->
-            <div class="timeline-entry timeline-cont relative mb-10 flex items-center w-full">
-              <div class="w-5/12"></div>
-              <div class="w-2/12 flex justify-center relative z-20">
-                <div class="w-3 h-3 rounded-full bg-primary opacity-40 shrink-0"></div>
-              </div>
-              <div class="w-5/12 text-left pl-2 lg:pl-4">
-                <img src="images/coffee.png" alt="" aria-hidden="true" width="469" height="448" loading="lazy" decoding="async" class="w-[44px] lg:w-[54px] mb-2" />
-                <p class="text-[0.875rem] lg:text-[0.9375rem] uppercase tracking-[0.2em] leading-[1.3] mb-1">
-                  17:00
-                </p>
-                <p class="text-[1rem] lg:text-[1.0625rem] leading-[1.7]">
-                  Kaffee &amp; Kuchen
-                </p>
-              </div>
-            </div>
-
-            <!-- Entry 4: Abendessen → left side -->
-            <div class="timeline-entry timeline-cont relative mb-10 flex items-center w-full">
-              <div class="w-5/12 text-right pr-2 lg:pr-4">
-                <img src="images/dinner.png" alt="" aria-hidden="true" width="593" height="447" loading="lazy" decoding="async" class="w-[44px] lg:w-[54px] mb-2 ml-auto" />
-                <p class="text-[0.875rem] lg:text-[0.9375rem] uppercase tracking-[0.2em] leading-[1.3] mb-1">
-                  19:00
-                </p>
-                <p class="text-[1rem] lg:text-[1.0625rem] leading-[1.7]">
-                  Abendessen
-                </p>
-              </div>
-              <div class="w-2/12 flex justify-center relative z-20">
-                <div class="w-3 h-3 rounded-full bg-primary opacity-40 shrink-0"></div>
-              </div>
-              <div class="w-5/12"></div>
-            </div>
-
-            <!-- Entry 5: Feier & Tanz → right side -->
-            <div class="timeline-cont relative flex items-center w-full">
-              <div class="w-5/12"></div>
-              <div class="w-2/12 flex justify-center relative z-20">
-                <div class="w-3 h-3 rounded-full bg-primary opacity-40 shrink-0"></div>
-              </div>
-              <div class="w-5/12 text-left pl-2 lg:pl-4">
-                <img src="images/music.png" alt="" aria-hidden="true" width="382" height="530" loading="lazy" decoding="async" class="w-[44px] lg:w-[54px] mb-2" />
-                <p class="text-[0.875rem] lg:text-[0.9375rem] uppercase tracking-[0.2em] leading-[1.3] mb-1">
-                  21:00
-                </p>
-                <p class="text-[1rem] lg:text-[1.0625rem] leading-[1.7]">
-                  Feier &amp; Tanz
-                </p>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Note -->
-          <p class="text-[1rem] lg:text-[1.0625rem] leading-[1.7] mt-10">
-            Zeiten sind vorläufig
-          </p>
-
-        </div>
-      </section>
-
-      <!-- ============================================ -->
       <!-- ANREISE -->
       <!-- ============================================ -->
-      <section id="anreise" class="bg-bg-alt py-16 lg:py-24 px-6 text-center">
+      <section id="anreise" class="bg-bg py-16 lg:py-24 px-6 text-center">
         <div class="max-w-[52rem] mx-auto">
 
           <h2 class="text-[1.125rem] lg:text-[1.25rem] uppercase tracking-[0.2em] leading-[1.3] mb-10">
@@ -271,7 +175,7 @@
       <!-- ============================================ -->
       <!-- UNTERKUNFT -->
       <!-- ============================================ -->
-      <section id="unterkunft" class="bg-bg py-16 lg:py-24 px-6 text-center">
+      <section id="unterkunft" class="bg-bg-alt py-16 lg:py-24 px-6 text-center">
         <div class="max-w-[52rem] mx-auto">
 
           <h2 class="text-[1.125rem] lg:text-[1.25rem] uppercase tracking-[0.2em] leading-[1.3] mb-8">
@@ -294,23 +198,7 @@
 
           <hr class="divider-rule" />
 
-          <!-- Accommodation 2: Gasthof Zum Storch -->
-          <p class="text-[1.125rem] lg:text-[1.125rem] uppercase tracking-[0.15em] leading-[1.3] mb-2">
-            Gasthof &bdquo;Zum Storch&ldquo;
-          </p>
-          <p class="text-[1rem] lg:text-[1.0625rem] leading-[1.7]">
-            Luitpoldstr. 5&ndash;7, 97357 Prichsenstadt
-          </p>
-          <p class="text-body text-[1rem] lg:text-[1.0625rem] leading-[1.7] mt-2 max-w-lg mx-auto">
-            Gemütlicher Gasthof in direkter Nachbarschaft zum Freihof.
-          </p>
-          <p class="mt-3">
-            <a href="https://www.gasthof-storch.de" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-accent underline text-[1rem] lg:text-[1.0625rem]">gasthof-storch.de</a>
-          </p>
-
-          <hr class="divider-rule" />
-
-          <!-- Accommodation 3: Gasthof Grüner Baum -->
+          <!-- Accommodation 2: Gasthof Grüner Baum -->
           <p class="text-[1.125rem] lg:text-[1.125rem] uppercase tracking-[0.15em] leading-[1.3] mb-2">
             Gasthof &bdquo;Grüner Baum&ldquo;
           </p>
@@ -322,6 +210,22 @@
           </p>
           <p class="mt-3">
             <a href="https://www.gasthaus-gruener-baum.com" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-accent underline text-[1rem] lg:text-[1.0625rem]">gasthaus-gruener-baum.com</a>
+          </p>
+
+          <hr class="divider-rule" />
+
+          <!-- Accommodation 3: Gasthof Zum Storch -->
+          <p class="text-[1.125rem] lg:text-[1.125rem] uppercase tracking-[0.15em] leading-[1.3] mb-2">
+            Gasthof &bdquo;Zum Storch&ldquo;
+          </p>
+          <p class="text-[1rem] lg:text-[1.0625rem] leading-[1.7]">
+            Luitpoldstr. 5&ndash;7, 97357 Prichsenstadt
+          </p>
+          <p class="text-body text-[1rem] lg:text-[1.0625rem] leading-[1.7] mt-2 max-w-lg mx-auto">
+            Gemütlicher Gasthof in direkter Nachbarschaft zum Freihof.
+          </p>
+          <p class="mt-3">
+            <a href="https://www.gasthof-storch.de" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-accent underline text-[1rem] lg:text-[1.0625rem]">gasthof-storch.de</a>
           </p>
 
           <hr class="divider-rule" />
@@ -341,16 +245,22 @@
       <!-- ============================================ -->
       <!-- WÜNSCHE -->
       <!-- ============================================ -->
-      <section id="wuensche" class="bg-bg-alt py-16 lg:py-24 px-6 text-center">
+      <section id="wuensche" class="bg-bg py-16 lg:py-24 px-6 text-center">
         <div class="max-w-[52rem] mx-auto">
 
           <h2 class="text-[1.125rem] lg:text-[1.25rem] uppercase tracking-[0.2em] leading-[1.3] mb-8">
             Wünsche
           </h2>
 
-          <!-- Section icon -->
+          <!-- Section divider: gift -->
           <div class="flex justify-center mt-4 mb-10 lg:mb-12">
-            <img src="images/globe.png" alt="" aria-hidden="true" width="417" height="334" loading="lazy" decoding="async" class="w-[160px] lg:w-[200px]" />
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#4F6F5B" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 12v10h16V12"/>
+              <path d="M2 12h20"/>
+              <path d="M12 12v10"/>
+              <path d="M12 12c-3 0-5-3-5-5s2-3 4-3c3 0 4 3 5 5"/>
+              <path d="M12 12c3 0 5-3 5-5s-2-3-4-3c-3 0-4 3-5 5"/>
+            </svg>
           </div>
 
           <p class="text-body text-[1rem] lg:text-[1.0625rem] leading-[1.7] max-w-lg mx-auto mb-5">
