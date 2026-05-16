@@ -45,8 +45,7 @@ jobs:
           FTP_USERNAME: ${{ vars.FTP_USERNAME }}
           FTP_HOST: ${{ vars.FTP_HOST }}
         run: |
-          lftp -e "
+          lftp -u "$FTP_USERNAME,$FTP_PASSWORD" "$FTP_HOST" -e "
             set ftp:ssl-allow yes;
-            open -u \$FTP_USERNAME,\$FTP_PASSWORD \$FTP_HOST;
             mirror --reverse --delete --verbose _deploy/ /www/;
             bye"
