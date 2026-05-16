@@ -7,6 +7,16 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Hero splash: small viewport height is stable across URL bar collapse on iOS */
+#hero {
+  height: 100svh;
+}
+
+/* Scroll offset for sticky header */
+section[id]:not(#hero) {
+  scroll-margin-top: 4rem;
+}
+
 /* Couple photo: soft radial fade into background */
 .photo-vignette {
   -webkit-mask-image: radial-gradient(ellipse 80% 65% at center 40%, black 25%, transparent 65%);
@@ -28,24 +38,4 @@ button:focus-visible {
   outline: 2px solid #456650;
   outline-offset: 2px;
   border-radius: 2px;
-}
-
-/* Gentle scroll-arrow hint animation */
-@keyframes float-down {
-  0%, 100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  50% {
-    transform: translateX(-50%) translateY(8px);
-  }
-}
-
-.hero-scroll-arrow {
-  animation: float-down 2.5s ease-in-out infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-scroll-arrow {
-    animation: none;
-  }
 }
