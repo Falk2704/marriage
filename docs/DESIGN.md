@@ -138,7 +138,10 @@ See [DESIGN_TOKENS.md](./DESIGN_TOKENS.md) for exact values.
 
 ## Interaction Rules
 
-- **No animations or transitions** except: subtle hover color change on nav links and interactive elements
+- **No animations or transitions** except:
+  - Subtle hover color change on nav links and interactive elements
+  - Mobile menu open/close: short height transition (≤200ms, ease-out), used solely to soften the disclosure
+- Respect `prefers-reduced-motion: reduce` — transitions are disabled when the user has set this preference
 - **Hover state**: Links and nav items shift to `accent` green on hover
 - **No parallax, no scroll effects, no fade-ins**
 - **No JavaScript-driven interactions** (the site is pure HTML+CSS)
